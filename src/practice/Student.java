@@ -4,21 +4,22 @@ import javax.naming.Name;
 import java.util.Scanner;
 
 public class Student {
-    static String stuName;
     public Student(String passedName)
     {
-        stuName = passedName;
+            System.out.println(passedName);
     }
-    public static void student(String stuName)
-    {
-        if(stuName.contentEquals(""))
-            System.out.println("Unknown");
-        else
-            System.out.println(stuName);
+    public Student() {
+        System.out.println("Unknown");
     }
+
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
+        System.out.print("Enter Student Name : ");
         String name = ip.nextLine();
-        Student.student(name);
+        Student std;
+        if(name.isEmpty())
+            std = new Student();
+        else
+            std = new Student(name);
     }
 }
