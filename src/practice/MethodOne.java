@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class MethodOne {
     public static void main(String[] args) {
-        midOfStr();
-       // countOfWords();
+        //midOfStr();
+        //countOfWords();
+        //compoundInterest();
+        sumOfInt();
     }
 
     //MiddleOfString
@@ -24,23 +26,40 @@ public class MethodOne {
 
     //CountOfWords
     public static int countOfWords() {
-        /*Scanner ip = new Scanner(System.in);
+        Scanner ip = new Scanner(System.in);
         System.out.print("\n Enter the String : ");
-        //String str = ip.nextLine();
-        //int len = str.length();
-        //int word = 1;
-        //String[] letters = new String[len];
-        //for (int i=1; i<=len; i++)
-        //    letters[i] = ip.next();
-        String letters = ip.next();
-               int len = letters.length();
-        System.out.println(len);
-        for (char i : letters ) {
-            System.out.println(i);
-
-       // System.out.println(return 0);
-
-         */
+        String userIn = ip.nextLine();
+        int count = userIn.split(" ").length;
+        System.out.println("No of words = " + count);
         return 0;
         }
+
+    //CompoundInterest for 5 years with 10% CI
+    public static float compoundInterest() {
+        float investAmt = 1000.0f;
+        float interestRate = 10.0f;
+        float maturityPeriod = 5.0f;
+        float amountAtMaturity;
+        amountAtMaturity = (float) (investAmt * (Math.pow((investAmt + (0.1f * investAmt)),maturityPeriod)));
+        System.out.println(amountAtMaturity);
+        return 0.0f;
+    }
+
+    //sumOfInteger
+
+    public static int sumOfInt(){
+        Scanner ip = new Scanner(System.in);
+        System.out.printf("\n Enter any integer : ");
+        int i = ip.nextInt();
+        int sum = 0;
+        int rem=0;
+        while (i > 0)
+        {
+            rem = i % 10;
+            sum +=rem;
+            i = i/10;
+        }
+        System.out.println("Sum of digits : " + sum);
+        return 0;
+    }
 }
